@@ -3,16 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 
 
-import {  ExampleComponent} from "server-api";
+import {  ExampleComponent, getCities} from "server-api";
 
 
 function App() {
+  console.log(getCities(), "getCities");
   return (
     <div className="App">
       
       <ExampleComponent text="module"/>
       Base App
-      
+     
     </div>
   );
 }
