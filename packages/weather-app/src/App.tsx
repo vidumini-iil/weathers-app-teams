@@ -5,13 +5,16 @@ import './App.css';
 
 import {  ExampleComponent} from "server-api";
 
+import  SearchBar  from "../src/components/SearchBar";
+
 
 function App() {
   return (
     <div className="App">
       
       <ExampleComponent text="module"/>
-      Base App
+      <SearchBar/>
+        Base Apps
       
     </div>
   );
