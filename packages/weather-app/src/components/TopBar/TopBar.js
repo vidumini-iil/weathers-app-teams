@@ -1,8 +1,9 @@
 import React from 'react'
+import "./TopBar.css";
 
 function TopBar() {
     return (
-        <div>
+        <div className="top-bar">
             <h1>Weather App</h1>
         </div>
     )
