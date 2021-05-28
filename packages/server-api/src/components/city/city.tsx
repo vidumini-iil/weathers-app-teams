@@ -25,7 +25,29 @@ export const getCities = async () => {
     //console.log(payload, " payload HaaHHello");
 
     return payload;
+  } catch (error) {
+    console.log(error);
+    console.log("error");
+    //throw error;
+  }
+};
 
+export const getCity = async (name: string) => {
+  console.log("name server", name);
+  try {
+    let name = "chico";
+    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${ApiIdCity}`;
+
+    const resData = await fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        return data;
+      });
+
+    const payload = resData;
+    console.log(payload, " payload chico chico");
+
+    return payload;
   } catch (error) {
     console.log(error);
     console.log("error");
