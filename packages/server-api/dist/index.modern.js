@@ -49,7 +49,7 @@ const Data = {
   }]
 };
 
-const getCities = () => {
+const getCities = async () => {
   try {
     const getData = Data.List;
     const loadedCitiesCode = [];
@@ -60,21 +60,16 @@ const getCities = () => {
 
     const stringCitiesCode = loadedCitiesCode.join(",");
     console.log("stringCitiesCode ", stringCitiesCode);
-    getCurrentWeather(stringCitiesCode);
+    const apiUrl = `http://api.openweathermap.org/data/2.5/group?id=${stringCitiesCode}&units=metric&appid=${ApiIdCity}`;
+    const resData = await fetch(apiUrl).then(response => response.json()).then(data => {
+      return data;
+    });
+    const payload = resData.list;
+    return payload;
   } catch (error) {
     console.log(error);
     console.log("error");
   }
-};
-
-const getCurrentWeather = async data => {
-  const apiUrl = `http://api.openweathermap.org/data/2.5/group?id=${data}&units=metric&appid=${ApiIdCity}`;
-  const resData = await fetch(apiUrl).then(response => response.json()).then(data => {
-    return data;
-  });
-  const payload = resData.list;
-  console.log(payload, " payload HwwHHello");
-  return payload;
 };
 
 let source;

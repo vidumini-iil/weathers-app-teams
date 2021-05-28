@@ -5,6 +5,22 @@ var axios = _interopDefault(require('axios'));
 
 var styles = {"test":"_styles-module__test__3ybTi"};
 
+var _iteratorSymbol = /*#__PURE__*/typeof Symbol !== "undefined" ? Symbol.iterator || (Symbol.iterator = Symbol("Symbol.iterator")) : "@@iterator";
+var _asyncIteratorSymbol = /*#__PURE__*/typeof Symbol !== "undefined" ? Symbol.asyncIterator || (Symbol.asyncIterator = Symbol("Symbol.asyncIterator")) : "@@asyncIterator";
+function _catch(body, recover) {
+  try {
+    var result = body();
+  } catch (e) {
+    return recover(e);
+  }
+
+  if (result && result.then) {
+    return result.then(void 0, recover);
+  }
+
+  return result;
+}
+
 var ApiIdCity = "cdd9baf674d2a4f1a402cf0d5655c4ee";
 
 var Data = {
@@ -53,34 +69,29 @@ var Data = {
 
 var getCities = function getCities() {
   try {
-    var getData = Data.List;
-    var loadedCitiesCode = [];
+    return Promise.resolve(_catch(function () {
+      var getData = Data.List;
+      var loadedCitiesCode = [];
 
-    for (var key in getData) {
-      loadedCitiesCode.push(getData[key].CityCode);
-    }
+      for (var key in getData) {
+        loadedCitiesCode.push(getData[key].CityCode);
+      }
 
-    var stringCitiesCode = loadedCitiesCode.join(",");
-    console.log("stringCitiesCode ", stringCitiesCode);
-    getCurrentWeather(stringCitiesCode);
-  } catch (error) {
-    console.log(error);
-    console.log("error");
-  }
-};
-
-var getCurrentWeather = function getCurrentWeather(data) {
-  try {
-    var apiUrl = "http://api.openweathermap.org/data/2.5/group?id=" + data + "&units=metric&appid=" + ApiIdCity;
-    return Promise.resolve(fetch(apiUrl).then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      return data;
-    })).then(function (resData) {
-      var payload = resData.list;
-      console.log(payload, " payload HwwHHello");
-      return payload;
-    });
+      var stringCitiesCode = loadedCitiesCode.join(",");
+      console.log("stringCitiesCode ", stringCitiesCode);
+      var apiUrl = "http://api.openweathermap.org/data/2.5/group?id=" + stringCitiesCode + "&units=metric&appid=" + ApiIdCity;
+      return Promise.resolve(fetch(apiUrl).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        return data;
+      })).then(function (resData) {
+        var payload = resData.list;
+        return payload;
+      });
+    }, function (error) {
+      console.log(error);
+      console.log("error");
+    }));
   } catch (e) {
     return Promise.reject(e);
   }
