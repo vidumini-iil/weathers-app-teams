@@ -1,37 +1,6 @@
 import { createElement } from 'react';
-<<<<<<< HEAD
 import axios from 'axios';
 
-var styles = {"test":"_styles-module__test__3ybTi"};
-
-let source;
-const getContryList = () => {
-  return axios("https://restcountries.eu/rest/v2/all").then(res => {
-    const list = res.data.map(value => ({
-      name: value.name,
-      countryCode: value.alpha2Code.toLowerCase()
-    }));
-    return list;
-  }).catch(error => error);
-};
-const getCityList = (serachText, countryCode) => {
-  if (source) {
-    source.cancel();
-  }
-
-  source = axios.CancelToken.source();
-  return axios.get("https://api.geoapify.com/v1/geocode/autocomplete", {
-    cancelToken: source.token,
-    params: {
-      text: serachText,
-      filter: `countrycode:${countryCode}`,
-      type: "city",
-      apiKey: "bf0cfe45ea014b5ab6b22c3b84e2e515"
-    }
-  });
-=======
-
-<<<<<<< HEAD
 var styles = {"test":"_styles-module__test__3ybTi"};
 
 const ApiIdCity = "cdd9baf674d2a4f1a402cf0d5655c4ee";
@@ -80,7 +49,7 @@ const Data = {
   }]
 };
 
-const getCities = () => {
+const getCities = async () => {
   try {
     const getData = Data.List;
     const loadedCitiesCode = [];
@@ -91,48 +60,52 @@ const getCities = () => {
 
     const stringCitiesCode = loadedCitiesCode.join(",");
     console.log("stringCitiesCode ", stringCitiesCode);
-    getCurrentWeather(stringCitiesCode);
+    const apiUrl = `http://api.openweathermap.org/data/2.5/group?id=${stringCitiesCode}&units=metric&appid=${ApiIdCity}`;
+    const resData = await fetch(apiUrl).then(response => response.json()).then(data => {
+      return data;
+    });
+    const payload = resData.list;
+    return payload;
   } catch (error) {
     console.log(error);
     console.log("error");
   }
 };
 
-const getCurrentWeather = async data => {
-  const apiUrl = `http://api.openweathermap.org/data/2.5/group?id=${data}&units=metric&appid=${ApiIdCity}`;
-  const resData = await fetch(apiUrl).then(response => response.json()).then(data => {
-    return data;
+let source;
+const getContryList = () => {
+  return axios("https://restcountries.eu/rest/v2/all").then(res => {
+    const list = res.data.map(value => ({
+      name: value.name,
+      countryCode: value.alpha2Code.toLowerCase()
+    }));
+    return list;
+  }).catch(error => error);
+};
+const getCityList = (serachText, countryCode) => {
+  if (source) {
+    source.cancel();
+  }
+
+  source = axios.CancelToken.source();
+  return axios.get("https://api.geoapify.com/v1/geocode/autocomplete", {
+    cancelToken: source.token,
+    params: {
+      text: serachText,
+      filter: `countrycode:${countryCode}`,
+      type: "city",
+      apiKey: "bf0cfe45ea014b5ab6b22c3b84e2e515"
+    }
   });
-  const payload = resData.list;
-  console.log(payload, " payload HwwHHello");
-  return payload;
->>>>>>> 6ce55664c18227fc8285d3e7b891f0cd976c23e6
 };
 
 const ExampleComponent = ({
   text
 }) => {
-<<<<<<< HEAD
-=======
-=======
-var styles = {"test":"_3ybTi"};
-
-var ExampleComponent = function ExampleComponent(_ref) {
-  var text = _ref.text;
->>>>>>> f246de0cc6b3edd4cf79d78495560f67789c5cdf
->>>>>>> 6ce55664c18227fc8285d3e7b891f0cd976c23e6
   return createElement("div", {
     className: styles.test
   }, "test : ", text);
 };
 
-<<<<<<< HEAD
-export { ExampleComponent, getCityList, getContryList };
-=======
-<<<<<<< HEAD
-export { ExampleComponent, getCities };
-=======
-export { ExampleComponent };
->>>>>>> f246de0cc6b3edd4cf79d78495560f67789c5cdf
->>>>>>> 6ce55664c18227fc8285d3e7b891f0cd976c23e6
+export { ExampleComponent, getCities, getCityList, getContryList };
 //# sourceMappingURL=index.modern.js.map

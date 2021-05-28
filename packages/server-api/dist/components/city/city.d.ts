@@ -1,1 +1,1 @@
-export declare const getCities: () => void;
+export declare const getCities: () => Promise<any>;
