@@ -1,3 +1,42 @@
+<<<<<<< HEAD
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var React = require('react');
+var axios = _interopDefault(require('axios'));
+
+var styles = {"test":"_styles-module__test__3ybTi"};
+
+var source;
+var getContryList = function getContryList() {
+  return axios("https://restcountries.eu/rest/v2/all").then(function (res) {
+    var list = res.data.map(function (value) {
+      return {
+        name: value.name,
+        countryCode: value.alpha2Code.toLowerCase()
+      };
+    });
+    return list;
+  })["catch"](function (error) {
+    return error;
+  });
+};
+var getCityList = function getCityList(serachText, countryCode) {
+  if (source) {
+    source.cancel();
+  }
+
+  source = axios.CancelToken.source();
+  return axios.get("https://api.geoapify.com/v1/geocode/autocomplete", {
+    cancelToken: source.token,
+    params: {
+      text: serachText,
+      filter: "countrycode:" + countryCode,
+      type: "city",
+      apiKey: "bf0cfe45ea014b5ab6b22c3b84e2e515"
+    }
+  });
+};
+=======
 var React = require('react');
 
 <<<<<<< HEAD
@@ -86,6 +125,7 @@ var getCurrentWeather = function getCurrentWeather(data) {
 =======
 var styles = {"test":"_3ybTi"};
 >>>>>>> f246de0cc6b3edd4cf79d78495560f67789c5cdf
+>>>>>>> 6ce55664c18227fc8285d3e7b891f0cd976c23e6
 
 var ExampleComponent = function ExampleComponent(_ref) {
   var text = _ref.text;
@@ -96,7 +136,12 @@ var ExampleComponent = function ExampleComponent(_ref) {
 
 exports.ExampleComponent = ExampleComponent;
 <<<<<<< HEAD
+exports.getCityList = getCityList;
+exports.getContryList = getContryList;
+=======
+<<<<<<< HEAD
 exports.getCities = getCities;
 =======
 >>>>>>> f246de0cc6b3edd4cf79d78495560f67789c5cdf
+>>>>>>> 6ce55664c18227fc8285d3e7b891f0cd976c23e6
 //# sourceMappingURL=index.js.map
