@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { OptionsType, OptionTypeBase } from "react-select";
 import { getContryList, getCityList } from "server-api";
 import { IContry } from "../../interfaces/Icontry";
+import './SearchBar.css'
 
 export const useSearch = () => {
     const [contryList, setContryList] = useState<IContry[]>([]);

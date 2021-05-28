@@ -5,14 +5,15 @@
 0 silly argv }
 1 notice cli v4.0.0
 2 verbose rootPath D:\informatics\task\weathers-app-teams
-3 error JSONError: Unexpected token "}" (0x7D) in JSON at position 1098 while parsing near "...os\": \"^0.21.1\",\n    }\n}\n" in packages\server-api\package.json
+3 error JSONError: Unexpected string in JSON at position 1140 while parsing '{    "name": "server-api",    "versi' in packages\server-api\package.json
 3 error
-3 error [0m [90m 37 |[39m     [32m"dependencies"[39m[33m:[39m {[0m
-3 error [0m [90m 38 |[39m         [32m"axios"[39m[33m:[39m [32m"^0.21.1"[39m[33m,[39m[0m
-3 error [0m[31m[1m>[22m[39m[90m 39 |[39m     }[0m
-3 error [0m [90m    |[39m     [31m[1m^[22m[39m[0m
-3 error [0m [90m 40 |[39m }[0m
-3 error [0m [90m 41 |[39m[0m
+3 error [0m [90m 38 |[39m         [32m"axios"[39m[33m:[39m [32m"^0.21.1"[39m[0m
+3 error [0m [90m 39 |[39m     }[0m
+3 error [0m[31m[1m>[22m[39m[90m 40 |[39m   [32m"name"[39m[33m:[39m [32m"server-api"[39m[33m,[39m[0m
+3 error [0m [90m    |[39m   [31m[1m^[22m[39m[0m
+3 error [0m [90m 41 |[39m   [32m"version"[39m[33m:[39m [32m"1.0.0"[39m[33m,[39m[0m
+3 error [0m [90m 42 |[39m   [32m"description"[39m[33m:[39m [32m"Made with create-react-library"[39m[33m,[39m[0m
+3 error [0m [90m 43 |[39m   [32m"author"[39m[33m:[39m [32m""[39m[33m,[39m[0m
 3 error
 3 error     at parseJson (D:\informatics\task\weathers-app-teams\node_modules\parse-json\index.js:29:21)
 3 error     at parse (D:\informatics\task\weathers-app-teams\node_modules\load-json-file\index.js:15:9)

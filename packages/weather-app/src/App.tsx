@@ -5,10 +5,9 @@ import './App.css';
 
 import  SearchBar  from "../src/components/SearchBar";
 
-import {  ExampleComponent, getCities} from "server-api";
+import {   getCities} from "server-api";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {  ExampleComponent} from "server-api";
 import Home from "./pages/Home/Home"
 import City from "./pages/City/City"
 
