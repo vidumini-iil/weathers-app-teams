@@ -18,9 +18,9 @@ export const SearchBar: React.FC<SearchBarProps> = () => {
 
     const handleSearch = () => {
         if (city) {
-            history.push(`/city?name=${city}`);
+            history.push(`/city/${city}`);
         } else {
-            history.push(`/city?name=New York`);
+            history.push(`/city/New York`);
         }
     };
 

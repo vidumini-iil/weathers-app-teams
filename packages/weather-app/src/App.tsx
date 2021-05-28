@@ -25,7 +25,7 @@ function App() {
                     <div className="container">
                         <Switch>
                             <Route exact path="/" component={Home} />
-                            <Route exact path="/city" component={City} />
+                            <Route exact path="/city/:city" component={City} />
                         </Switch>
                     </div>
                 </Fragment>
