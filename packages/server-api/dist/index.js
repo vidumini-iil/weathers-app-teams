@@ -2,7 +2,9 @@ var React = require('react');
 
 var styles = {"test":"_styles-module__test__3ybTi"};
 
-var data = {
+var ApiIdCity = "cdd9baf674d2a4f1a402cf0d5655c4ee";
+
+var Data = {
   "List": [{
     "CityCode": "1248991",
     "CityName": "Colombo",
@@ -45,10 +47,10 @@ var data = {
     "Status": "Clear"
   }]
 };
-var apiIdCity = "cdd9baf674d2a4f1a402cf0d5655c4ee";
+
 var getCities = function getCities() {
   try {
-    var getData = data.List;
+    var getData = Data.List;
     var loadedCitiesCode = [];
 
     for (var key in getData) {
@@ -66,14 +68,14 @@ var getCities = function getCities() {
 
 var getCurrentWeather = function getCurrentWeather(data) {
   try {
-    var apiUrl = "http://api.openweathermap.org/data/2.5/group?id=" + data + "&units=metric&appid=" + apiIdCity;
+    var apiUrl = "http://api.openweathermap.org/data/2.5/group?id=" + data + "&units=metric&appid=" + ApiIdCity;
     return Promise.resolve(fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (data) {
       return data;
     })).then(function (resData) {
       var payload = resData.list;
-      console.log(payload, " payload Hello");
+      console.log(payload, " payload HwwHHello");
       return payload;
     });
   } catch (e) {

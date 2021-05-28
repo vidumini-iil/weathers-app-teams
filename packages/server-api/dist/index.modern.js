@@ -2,7 +2,9 @@ import { createElement } from 'react';
 
 var styles = {"test":"_styles-module__test__3ybTi"};
 
-const data = {
+const ApiIdCity = "cdd9baf674d2a4f1a402cf0d5655c4ee";
+
+const Data = {
   "List": [{
     "CityCode": "1248991",
     "CityName": "Colombo",
@@ -45,10 +47,10 @@ const data = {
     "Status": "Clear"
   }]
 };
-const apiIdCity = "cdd9baf674d2a4f1a402cf0d5655c4ee";
+
 const getCities = () => {
   try {
-    const getData = data.List;
+    const getData = Data.List;
     const loadedCitiesCode = [];
 
     for (const key in getData) {
@@ -65,12 +67,12 @@ const getCities = () => {
 };
 
 const getCurrentWeather = async data => {
-  const apiUrl = `http://api.openweathermap.org/data/2.5/group?id=${data}&units=metric&appid=${apiIdCity}`;
+  const apiUrl = `http://api.openweathermap.org/data/2.5/group?id=${data}&units=metric&appid=${ApiIdCity}`;
   const resData = await fetch(apiUrl).then(response => response.json()).then(data => {
     return data;
   });
   const payload = resData.list;
-  console.log(payload, " payload Hello");
+  console.log(payload, " payload HwwHHello");
   return payload;
 };
 
