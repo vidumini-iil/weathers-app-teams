@@ -29,13 +29,5 @@ export const getCityList = (serachText: string, countryCode: string | null | und
                 apiKey: "bf0cfe45ea014b5ab6b22c3b84e2e515",
             },
         })
-        .then((res) => {
-            const list = res.data?.features.map((value: any) => ({
-                value: value.properties.city,
-                label: value.properties.city,
-            }));
-            return list;
-        })
-        .catch((error) => error);
   
 };

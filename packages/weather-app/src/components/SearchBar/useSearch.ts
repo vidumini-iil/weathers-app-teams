@@ -6,8 +6,6 @@ import { IContry } from "../../interfaces/Icontry";
 export const useSearch = () => {
     const [contryList, setContryList] = useState<IContry[]>([]);
     const [selectedContry, setSelectedContry] = useState<string | null | undefined>(null);
-    const [loading, setLoading] = useState(false);
-    const [citiList, setCitiList] = useState<OptionTypeBase[]>([]);
 
     useEffect(() => {
         getContryList()
@@ -15,16 +13,15 @@ export const useSearch = () => {
             .catch(() => setContryList([]));
     }, []);
 
-    const onType = (searchText: string) => {
-        setLoading(true);
-        getCityList(searchText, selectedContry)
-            .then((res) => {
-                console.log(res);
-                setCitiList(res);
-            })
-            .catch(() => setCitiList([]))
-            .finally(() => setLoading(false));
+    const loadOptions = async (inputValue: string) => {
+        const res = await getCityList(inputValue, selectedContry);
+        const list = res.data?.features.map((value: any) => ({
+            value: value.properties.city,
+            label: value.properties.city,
+        }));
+
+        return list
     };
 
-    return { contryList, citiList, loading, setSelectedContry, onType };
+    return { contryList, loadOptions, setSelectedContry };
 };

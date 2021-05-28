@@ -33,18 +33,6 @@ var getCityList = function getCityList(serachText, countryCode) {
       type: "city",
       apiKey: "bf0cfe45ea014b5ab6b22c3b84e2e515"
     }
-  }).then(function (res) {
-    var _res$data;
-
-    var list = (_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.features.map(function (value) {
-      return {
-        value: value.properties.city,
-        label: value.properties.city
-      };
-    });
-    return list;
-  })["catch"](function (error) {
-    return error;
   });
 };
 

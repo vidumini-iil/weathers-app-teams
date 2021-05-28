@@ -27,15 +27,7 @@ const getCityList = (serachText, countryCode) => {
       type: "city",
       apiKey: "bf0cfe45ea014b5ab6b22c3b84e2e515"
     }
-  }).then(res => {
-    var _res$data;
-
-    const list = (_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.features.map(value => ({
-      value: value.properties.city,
-      label: value.properties.city
-    }));
-    return list;
-  }).catch(error => error);
+  });
 };
 
 const ExampleComponent = ({

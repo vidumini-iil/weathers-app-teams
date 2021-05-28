@@ -11,9 +11,7 @@ interface SearchBarProps {
 }
 
 export const SearchBar: React.FC<SearchBarProps> = () => {
-    const { contryList, citiList, loading, setSelectedContry, onType } = useSearch();
-
-  
+    const { contryList, loadOptions, setSelectedContry } = useSearch();
 
     return (
         <div>
@@ -25,13 +23,10 @@ export const SearchBar: React.FC<SearchBarProps> = () => {
             />
             <AsyncSelect
                 cacheOptions
-                options={[ {value: "fsdfs", label: "FSfdsfsdfs"}]}
-                onInputChange={(value) => onType(value)}
-                isLoading={loading}
+                loadOptions={loadOptions}
                 getOptionLabel={(option) => option.label}
                 getOptionValue={(option) => option.value}
             />
-
         </div>
     );
 };
