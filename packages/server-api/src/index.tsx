@@ -8,3 +8,5 @@ interface Props {
 export const ExampleComponent = ({ text }: Props) => {
     return <div className={styles.test}>test : {text}</div>;
 };
+
+export { getContryList, getCityList } from "./api/search";
