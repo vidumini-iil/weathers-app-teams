@@ -1,5 +1,6 @@
 import { createElement } from 'react';
 
+<<<<<<< HEAD
 var styles = {"test":"_styles-module__test__3ybTi"};
 
 const ApiIdCity = "cdd9baf674d2a4f1a402cf0d5655c4ee";
@@ -79,10 +80,20 @@ const getCurrentWeather = async data => {
 const ExampleComponent = ({
   text
 }) => {
+=======
+var styles = {"test":"_3ybTi"};
+
+var ExampleComponent = function ExampleComponent(_ref) {
+  var text = _ref.text;
+>>>>>>> f246de0cc6b3edd4cf79d78495560f67789c5cdf
   return createElement("div", {
     className: styles.test
   }, "test : ", text);
 };
 
+<<<<<<< HEAD
 export { ExampleComponent, getCities };
+=======
+export { ExampleComponent };
+>>>>>>> f246de0cc6b3edd4cf79d78495560f67789c5cdf
 //# sourceMappingURL=index.modern.js.map

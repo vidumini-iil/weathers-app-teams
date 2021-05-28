@@ -1,5 +1,6 @@
 var React = require('react');
 
+<<<<<<< HEAD
 var styles = {"test":"_styles-module__test__3ybTi"};
 
 var ApiIdCity = "cdd9baf674d2a4f1a402cf0d5655c4ee";
@@ -82,6 +83,9 @@ var getCurrentWeather = function getCurrentWeather(data) {
     return Promise.reject(e);
   }
 };
+=======
+var styles = {"test":"_3ybTi"};
+>>>>>>> f246de0cc6b3edd4cf79d78495560f67789c5cdf
 
 var ExampleComponent = function ExampleComponent(_ref) {
   var text = _ref.text;
@@ -91,5 +95,8 @@ var ExampleComponent = function ExampleComponent(_ref) {
 };
 
 exports.ExampleComponent = ExampleComponent;
+<<<<<<< HEAD
 exports.getCities = getCities;
+=======
+>>>>>>> f246de0cc6b3edd4cf79d78495560f67789c5cdf
 //# sourceMappingURL=index.js.map
