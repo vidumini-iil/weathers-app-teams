@@ -1,0 +1,44 @@
+.card-wrapper{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    
+}
+.cards-container{
+    display: grid;
+    grid-template-columns: 5% 40% 10% 40% 5%;
+    text-align: center;
+    color: #fff;
+    /* background-color: red; */
+}
+.cards-real{
+    display: grid;
+    background-color: #388ee7;
+    background-image: url(../../images/Layer_1.png);
+    height: 130px;
+    margin-bottom: 40px;
+    grid-template-rows: 65% 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.bottom-div{
+    background-color: #383b47;
+}
+.blue{
+    background-color: #388ee7;
+}
+.purple{
+    background-color: #c931fc;
+}
+.green{
+    background-color: #40b681;
+}
+.yellow{
+    background-color: #de944e;
+}
+.red{
+    background-color: #9c3a3a;
+}
+.grey{
+    background-color: #878787;
+}
