@@ -35,7 +35,7 @@ export const getCities = async () => {
 export const getCity = async (name: string) => {
   console.log("name server", name);
   try {
-    let name = "chico";
+    //let name = "chico";
     const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${ApiIdCity}`;
 
     const resData = await fetch(apiUrl)
