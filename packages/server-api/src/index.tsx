@@ -11,4 +11,4 @@ export const ExampleComponent = ({ text }: Props) => {
 };
 
 export { getContryList, getCityList } from "./api/search";
-export { getCities };
+export {getCities};
