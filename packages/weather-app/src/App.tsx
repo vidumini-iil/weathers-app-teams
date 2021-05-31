@@ -11,6 +11,7 @@ import { getCities } from "server-api";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import City from "./pages/City/City";
+import Notification from "./components/Notification";
 
 function App() {
     // console.log(
@@ -23,6 +24,7 @@ function App() {
             <Router>
                 <Fragment>
                     <div className="container">
+                        <Notification/>
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route exact path="/city/:city" component={City} />
