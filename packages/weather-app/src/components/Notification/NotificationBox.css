@@ -12,6 +12,22 @@
     padding: 30px;
 }
 
+
+
+.notificationbox-close{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.notificationbox-close > img {
+    height: 15px;
+    width: 15px;
+}
+.notificationbox-close > img:hover {
+    cursor: pointer;
+}
+
+
 .notificationbox-header{
     display: flex;
     flex-direction: column;

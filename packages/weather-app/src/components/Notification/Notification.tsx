@@ -1,23 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Notification.css";
 
-import { useAppDispatch, useAppSelector } from "../../redux/store";
 import NotificationBox from "./NotificationBox";
+import { useNotification } from "./useNotification";
+import { tempConverter } from "./../../Utils/tempConverter";
+import closeIcon from "../../assets/icons/close.png";
 
 interface NotificationProps {}
 
 const Notification: React.FC<NotificationProps> = ({}) => {
-    const [open, setOpen] = useState(false);
+    const { open, data, notification, openNotificationBox, cloaseNotificationBox, closeNotification } =
+        useNotification();
 
-    return (
-        <div>
-            <NotificationBox isOpen={open} onClose={() => setOpen(false)} />
-            <div onClick={() => setOpen(true)} className="notification-circle">
-                <div className="notification-circle-content">
-                    <h4>12C</h4>
+    if (notification) {
+        return (
+            <div>
+                <NotificationBox data={data} isOpen={open} onClose={cloaseNotificationBox} />
+                <div className="notification-circle-container">
+                    <div onClick={closeNotification} className="notification-circle-close">
+                        <img src={closeIcon} alt="close" />
+                    </div>
+                    <div onClick={openNotificationBox} className="notification-circle">
+                        <div className="notification-circle-content">
+                            <h4>{data ? data.main.temp + "°C" : "..."}</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    } else {
+        return null;
+    }
 };
 export default Notification;
