@@ -1,17 +1,17 @@
 .notificationbox-root {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
-    margin-bottom: 80px;
-    margin-right: 50px;
+    margin-bottom: 90px;
+    margin-right: 60px;
     width: 200px;
-    height: 300px;
+    height: 330px;
     border-radius: 30px;
-    background-color: rgb(70, 224, 245);
+    background-color: #388EE6;
     z-index: 30;
     padding: 30px;
+    color: white;
 }
-
 
 
 .notificationbox-close{
@@ -39,11 +39,21 @@
 
 .notificationbox-header-temp{
     padding: 10px;
+    border: 8px solid white;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    
 }
 
 .notificationbox-header-temp > span{
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 600;
 
 }
 
@@ -55,6 +65,16 @@
 }
 .notificationbox-header-contry > h5{
     line-height: 0;
+
+}
+
+.notificationbox-city-status{
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
 
 }
 

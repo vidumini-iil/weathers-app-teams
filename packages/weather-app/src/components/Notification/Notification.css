@@ -1,5 +1,7 @@
+
+
 .notification-circle-container {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     margin-bottom: 80px;
@@ -24,6 +26,7 @@
 .notification-circle:hover {
     cursor: pointer;
     opacity: 1;
+    transform: scale(1.2);
 }
 
 .notification-circle-close {
@@ -54,4 +57,5 @@
 
 .notification-circle-content > h4 {
     font-weight: bold;
+    font-size: 12px;
 }
