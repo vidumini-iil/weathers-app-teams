@@ -1,13 +1,14 @@
-.footer{
-    text-align: center;
-    background-color: #30333d;
-    position:absolute;
-left:0;
-bottom:0;
-right:0;
-height: 40px;
+.footer {
+  text-align: center;
+  background-color: #30333d;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  margin-top: 30px;
 }
 .footer h1 {
-    color: #fff;
-    font-size: 14px;
+  color: #fff;
+  font-size: 14px;
 }

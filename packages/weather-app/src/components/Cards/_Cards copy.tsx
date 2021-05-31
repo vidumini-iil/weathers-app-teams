@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { Fragment, useState, useEffect } from "react";
 import "./Cards.css";
+
+import { getCity } from "server-api";
 
 
 function Cards() {
+    const [city, setCity] = useState();
     return (
         <>
         <div className="card-wrapper">

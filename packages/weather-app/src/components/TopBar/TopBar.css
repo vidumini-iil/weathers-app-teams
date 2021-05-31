@@ -1,7 +1,11 @@
-.top-bar{
+.top-header-bar{
     text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
 }
-.top-bar h1{
+.top-header-bar h1{
     margin: 0px;
     padding: 10px;
     color: #fff;
