@@ -1,0 +1,44 @@
+.notificationbox-root {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 80px;
+    margin-right: 50px;
+    width: 200px;
+    height: 300px;
+    border-radius: 30px;
+    background-color: rgb(70, 224, 245);
+    z-index: 30;
+    padding: 30px;
+}
+
+.notificationbox-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+
+}
+
+.notificationbox-header-temp{
+    padding: 10px;
+}
+
+.notificationbox-header-temp > span{
+    font-size: 40px;
+    font-weight: bold;
+
+}
+
+.notificationbox-header-contry{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-weight: 500;
+}
+.notificationbox-header-contry > h5{
+    line-height: 0;
+
+}
+

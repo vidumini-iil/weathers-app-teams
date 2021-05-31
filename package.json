@@ -13,5 +13,8 @@
     },
     "workspaces": [
         "packages/*"
-    ]
+    ],
+    "dependencies": {
+        "react-motion": "^0.5.2"
+    }
 }
