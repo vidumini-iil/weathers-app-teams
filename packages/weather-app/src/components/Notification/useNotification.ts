@@ -17,7 +17,7 @@ export const useNotification = () => {
         getCity(activeCity).then((res) => setData(res));
     };
 
-    const cloaseNotificationBox = () => {
+    const closeNotificationBox = () => {
         setOpen(false);
     };
 
@@ -26,9 +26,12 @@ export const useNotification = () => {
     };
 
     useEffect(() => {
+        getCity(activeCity).then((res) => setData(res));
+    }, [activeCity]);
+
+    useEffect(() => {
         const interval = setInterval(() => {
             getCity(activeCity).then((res) => {
-                console.log(res);
                 setData(res);
             });
         }, 100000);
@@ -42,7 +45,7 @@ export const useNotification = () => {
         activeCity,
         notification,
         openNotificationBox,
-        cloaseNotificationBox,
+        closeNotificationBox,
         closeNotification,
     };
 };
