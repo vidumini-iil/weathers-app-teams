@@ -2,8 +2,6 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 import { CityItemProp } from "../../interfaces/Icontry";
-import { getWeatherIcon } from "../functions/GetWeatherIcon";
-import { timeConverter, sunTimeConverter } from "../functions/timeConverter";
 
 import WeatherIcon1 from "../../images/Layer-1-7.png";
 import WeatherIcon2 from "../../images/Layer-1-3.png";
@@ -18,6 +16,75 @@ import "./CityBucket.css";
 function CityBucket(props: CityItemProp) {
   const cityName = props.city.name;
   const visibility = props.city.visibility / 1000;
+
+  const getWeatherIcon = (initialWheather: string) => {
+    switch (initialWheather) {
+      case "overcast clouds":
+        return WeatherIcon1;
+      case "few clouds":
+        return WeatherIcon5;
+      case "mist":
+        return WeatherIcon2;
+      case "broken clouds":
+        return WeatherIcon3;
+      case "light rain":
+        return WeatherIcon5;
+      case "clear sky":
+        return WeatherIcon4;
+      default:
+        return WeatherIcon1;
+    }
+  };
+
+  const timeConverter = (UNIX_timestamp: number) => {
+    let a = new Date(UNIX_timestamp * 1000);
+    let months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    let month = months[a.getMonth()];
+    let date = a.getDate();
+    let hour = a.getHours();
+    let min = a.getMinutes();
+
+    let time: string = hour + ":" + min;
+
+    let times: Array<string> = time.split(":");
+    let meridiemTime =
+      (parseInt(times[0]) >= 12 &&
+        (parseInt(times[0]) - 12 || 12) + ":" + times[1] + "pm") ||
+      (Number(times[0]) || 12) + ":" + times[1] + "am";
+
+    let timeDate = meridiemTime + ", " + month + " " + date;
+    return timeDate;
+  };
+
+  const sunTimeConverter = (UNIX_timestamp: number) => {
+    let a = new Date(UNIX_timestamp * 1000);
+
+    let hour = a.getHours();
+    let min = a.getMinutes();
+
+    let time: string = hour + ":" + min;
+
+    let times: Array<string> = time.split(":");
+    let meridiemTime =
+      (parseInt(times[0]) >= 12 &&
+        (parseInt(times[0]) - 12 || 12) + ":" + parseInt(times[1]) + "pm") ||
+      (Number(times[0]) || 12) + ":" + times[1] + "am";
+
+    return meridiemTime;
+  };
 
   return (
     <div className="child">
