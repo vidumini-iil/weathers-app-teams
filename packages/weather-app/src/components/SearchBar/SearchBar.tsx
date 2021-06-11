@@ -10,7 +10,7 @@ interface SearchBarProps {
     text?: string;
 }
 
-export const SearchBar: React.FC<SearchBarProps> = () => {
+const SearchBar: React.FC<SearchBarProps> = () => {
     const history = useHistory();
 
     const { contryList, loadOptions, setSelectedContry } = useSearch();

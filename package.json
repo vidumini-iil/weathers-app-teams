@@ -9,7 +9,8 @@
         "bootstrap": "lerna bootstrap",
         "clean": "lerna clean",
         "start": "lerna run start --parallel --stream",
-        "build": "lerna run --stream  build"
+        "build": "lerna run --stream  build",
+        "test": "lerna run test --scope=weather-app --stream"
     },
     "workspaces": [
         "packages/*"
